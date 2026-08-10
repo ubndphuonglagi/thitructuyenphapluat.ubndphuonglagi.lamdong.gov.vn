@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="saodo.ico" type="image/ico">
+    <title>Cuộc Thi Trực Tuyến Tìm Hiểu Pháp Luật Năm 2026 - UBND Phường La Gi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Inter & Montserrat for formal headers -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Montserrat:wght@500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        civic: {
+                            red: '#be123c',
+                            darkred: '#881337',
+                            gold: '#d97706',
+                            brightgold: '#f59e0b',
+                            goldlight: '#fef3c7',
+                            blue: '#1e3a8a',
+                            navy: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        header: ['Montserrat', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                        body: ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .civic-gradient {
+            background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
+        }
+
+        .gold-border {
+            border: 2px solid #f59e0b;
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(180deg, #fffbeb 0%, #fef08a 40%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding-top: 0.35em;
+            padding-bottom: 0.35em;
+            padding-left: 0.08em;
+            padding-right: 0.08em;
+            margin-top: -0.25em;
+            margin-bottom: -0.25em;
+        }
+
+        /* Drums of Dong Son subtle background overlay */
+        .bg-pattern {
+            background-color: #7f1d1d;
+            background-image: radial-gradient(#b91c1c 1px, transparent 1px), radial-gradient(#b91c1c 1px, #7f1d1d 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        .badge-glow {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Modal Overlay */
+        .modal-backdrop {
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(245, 158, 11, 0.5); }
+            50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-200">
+
+    <!-- Top Header Bar -->
+    <header class="bg-civic-navy text-white text-xs md:text-sm py-2 px-4 shadow-md border-b border-amber-500/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="flex items-center gap-1 text-amber-400 font-semibold">
+                    <i class="fa-solid => fa-building-columns"></i> ỦY BAN NHÂN DÂN PHƯỜNG LA GI
+                </span>
+                <span class="hidden sm:inline text-slate-400">|</span>
+                <span class="hidden sm:inline text-slate-300">Tỉnh Lâm Đồng</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-slate-300">
+                <span><i class="fa-regular fa-calendar-days mr-1 text-amber-400"></i> <span id="current-date-txt">---</span></span>
+                <span class="hidden md:inline"><i class="fa-solid fa-phone mr-1 text-amber-400"></i> Hotline: 0986.310.127 - 0382.368.191</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN SECTION PART 1: Banner, Timer, Spin Trigger -->
+    <main class="flex-grow">
+        <section class="civic-gradient bg-pattern text-white relative overflow-hidden py-10 md:py-14 px-4 shadow-xl border-b-4 border-amber-500">
+            <!-- Decorative Lotus/Star graphic in background -->
+            <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
+                <i class="fa-solid fa-star text-[350px] text-amber-300"></i>
+            </div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+                
+                <!-- Crest Emblem / Star -->
+                <div class="mb-3 w-16 h-16 md:w-20 md:h-20 rounded-full bg-amber-500 flex items-center justify-center p-1 shadow-lg ring-4 ring-amber-300/40 badge-glow">
+                    <div class="w-full h-full rounded-full bg-red-700 flex items-center justify-center border-2 border-amber-300">
+                        <i class="fa-solid fa-star text-amber-300 text-3xl md:text-4xl"></i>
+                    </div>
+                </div>
+
+                <!-- Organization Names -->
+                <h3 class="font-header tracking-wider uppercase font-bold text-sm md:text-lg text-amber-200">
+                    UBND TỈNH LÂM ĐỒNG
+                </h3>
+                <h2 class="font-header tracking-wide uppercase font-extrabold text-base md:text-xl text-white mb-2">
+                    UBND PHƯỜNG LA GI
+                </h2>
+
+                <!-- Ribbon Divider -->
+                <div class="w-48 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent my-2"></div>
+
+                <!-- Contest Titles -->
+                <h4 class="font-header uppercase font-extrabold text-amber-300 text-base sm:text-xl md:text-2xl tracking-wider mt-2">
+                    CUỘC THI TRỰC TUYẾN
+                </h4>
+                <div class="w-full text-center flex justify-center items-center overflow-visible my-1">
+                    <h1 class="font-header font-black text-[clamp(1.1rem,4.5vw,3.75rem)] gold-text-gradient leading-normal tracking-tight uppercase filter drop-shadow-md whitespace-nowrap">
+                        "TÌM HIỂU PHÁP LUẬT NĂM 2026"
+                    </h1>
+                </div>
+
+                <!-- Time Span Display -->
+                <div class="inline-flex items-center gap-2 bg-black/40 border border-amber-400/50 rounded-full px-5 py-1.5 text-xs md:text-sm font-medium text-amber-100 my-2 backdrop-blur-sm">
+                    <i class="fa-solid fa-clock text-amber-400"></i>
+                    <span>Thời gian diễn ra: từ <strong id="display-start-date" class="text-white">--:-- ngày --/--/2026</strong> đến <strong id="display-end-date" class="text-white">--:-- ngày --/--/2026</strong></span>
+                </div>
+
+                <!-- Timer Container & Status Message -->
+                <div class="w-full max-w-2xl mt-6 p-6 rounded-2xl bg-black/50 border-2 border-amber-400/60 shadow-2xl backdrop-blur-md">
+                    <div id="timer-status-box" class="text-center">
+                        <!-- Message will be dynamically inserted here -->
+                        <div id="status-message" class="text-xl md:text-2xl font-bold text-amber-300 hidden"></div>
+
+                        <!-- Live Countdown Clock -->
+                        <div id="countdown-clock" class="grid grid-cols-4 gap-2 md:gap-4 my-2">
+                            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border border-amber-500/40 rounded-xl p-2 md:p-3 shadow-inner">
+                                <span id="days" class="font-header font-black text-2xl md:text-4xl text-amber-400 block">00</span>
+                                <span class="text-[10px] md:text-xs text-slate-300 uppercase font-semibold">Ngày</span>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border border-amber-500/40 rounded-xl p-2 md:p-3 shadow-inner">
+                                <span id="hours" class="font-header font-black text-2xl md:text-4xl text-amber-400 block">00</span>
+                                <span class="text-[10px] md:text-xs text-slate-300 uppercase font-semibold">Giờ</span>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border border-amber-500/40 rounded-xl p-2 md:p-3 shadow-inner">
+                                <span id="minutes" class="font-header font-black text-2xl md:text-4xl text-amber-400 block">00</span>
+                                <span class="text-[10px] md:text-xs text-slate-300 uppercase font-semibold">Phút</span>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border border-amber-500/40 rounded-xl p-2 md:p-3 shadow-inner">
+                                <span id="seconds" class="font-header font-black text-2xl md:text-4xl text-amber-400 block">00</span>
+                                <span class="text-[10px] md:text-xs text-slate-300 uppercase font-semibold">Giây</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Start Contest Button (Appears only when active) -->
+                    <div id="start-btn-container" class="mt-6 hidden">
+                        <button id="btn-start-exam" class="animate-pulse-glow bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-red-950 font-header font-black text-lg md:text-2xl py-4 px-10 rounded-full shadow-2xl transition transform hover:-translate-y-1 active:translate-y-0 uppercase tracking-wide border-2 border-white flex items-center justify-center gap-3 mx-auto cursor-pointer">
+                            <i class="fa-solid fa-play text-xl"></i>
+                            <span>BẮT ĐẦU LÀM BÀI</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulation/Testing Panel Toggle for evaluation -->
+                <!--div class="mt-4 text-xs text-amber-200/70 bg-black/30 px-3 py-1.5 rounded-lg border border-amber-500/20 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-amber-400"></i>
+                    <span>Chế độ kiểm thử thời gian:</span>
+                    <button onclick="setTestState('before')" class="underline hover:text-amber-300">Chưa bắt đầu</button> |
+                    <button onclick="setTestState('active')" class="underline hover:text-amber-300">Đang diễn ra</button> |
+                    <button onclick="setTestState('ended')" class="underline hover:text-amber-300">Đã kết thúc</button> |
+                    <button onclick="resetToRealTime()" class="underline hover:text-amber-300">Thực tế (JS Code)</button>
+                </div-->
+
+            </div>
+        </section>
+
+        <!-- MAIN SECTION PART 2: Rules, Content, Guide, Prizes -->
+        <section class="max-w-6xl mx-auto px-4 py-12">
+            
+            <!-- Section Title -->
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-civic-red bg-red-100 px-3 py-1 rounded-full border border-red-200">
+                    THÔNG TIN CHI TIẾT
+                </span>
+                <h2 class="font-header text-2xl md:text-3xl font-bold text-slate-800 mt-2">
+                    NỘI DUNG & THỂ LỆ CUỘC THI
+                </h2>
+                <div class="w-20 h-1 bg-civic-red mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Tab Navigation Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-200 pb-4" id="info-tabs">
+                <button onclick="switchTab('noi-dung')" id="tab-noi-dung" class="tab-btn active font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-civic-red text-white shadow-md">
+                    <i class="fa-solid fa-book-open mr-2"></i>Nội Dung Cuộc Thi
+                </button>
+                <button onclick="switchTab('the-le')" id="tab-the-le" class="tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-scale-balanced mr-2"></i>Thể Lệ
+                </button>
+                <button onclick="switchTab('cach-thuc')" id="tab-cach-thuc" class="tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-list-check mr-2"></i>Cách Thức Thực Hiện
+                </button>
+                <button onclick="switchTab('giai-thuong')" id="tab-giai-thuong" class="tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-trophy mr-2"></i>Giải Thưởng
+                </button>
+                <button onclick="switchTab('ket-qua')" id="tab-ket-qua" class="tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-bullhorn mr-2"></i>Công Bố Kết Quả
+                </button>
+                <button onclick="switchTab('tai-lieu')" id="tab-tai-lieu" class="tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-bullhorn mr-2"></i>Tài Liệu
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8 min-h-[320px]">
+                
+                <!-- Tab 1: Nội dung -->
+                <div id="content-noi-dung" class="tab-panel">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved"></i> Nội Dung Tìm Hiểu Pháp Luật
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-slate-700 leading-relaxed text-sm md:text-base">
+                        <div class="space-y-3">
+                            <p class="font-semibold text-slate-900">Cuộc thi tập trung vào các chủ đề pháp luật thiết thực đối với cán bộ, nhân dân và người lao động trên địa bàn phường La Gi năm 2026:</p>
+                            <ul class="list-disc list-inside space-y-2 pl-2">
+                                <li>Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam.</li>
+                                <li>Luật Đất đai (sửa đổi, bổ sung cập nhật 2024 - 2026).</li>
+                                <li>Luật Trật tự, an toàn giao thông đường bộ.</li>
+                                <li>Luật Phòng, chống tham nhũng và Cải cách hành chính.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200">
+                            <h4 class="font-bold text-amber-900 flex items-center gap-2">
+                                <i class="fa-solid fa-lightbulb text-amber-600"></i> Mục tiêu cuộc thi
+                            </h4>
+                            <p class="text-amber-900/90 text-sm">
+                                Nâng cao nhận thức, ý thức chấp hành pháp luật của cán bộ, công chức, viên chức, người lao động, chiến sĩ lực lượng vũ trang, học sinh và nhân dân trên địa bàn phường La Gi, tỉnh Lâm Đồng. Tuyên truyền sâu rộng tinh thần "Sống và làm việc theo Hiến pháp và Pháp luật".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Thể lệ -->
+                <div id="content-the-le" class="tab-panel hidden">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-file-contract"></i> Thể Lệ Cuộc Thi
+                    </h3>
+                    <div class="space-y-4 text-slate-700 text-sm md:text-base">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="text-civic-red font-bold text-lg mb-1"><i class="fa-solid fa-users mr-1"></i> Đối tượng</div>
+                                <p class="text-slate-600 text-sm">Tất cả cán bộ, công chức, viên chức, người lao động, đoàn viên, thanh niên và nhân dân đang sinh sống, làm việc tại phường La Gi, tỉnh Lâm Đồng.</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="text-civic-red font-bold text-lg mb-1"><i class="fa-solid fa-clock-rotate-left mr-1"></i> Hình thức & Thời gian</div>
+                                <p class="text-slate-600 text-sm">Thi trắc nghiệm trực tuyến. Mỗi lượt thi gồm 20 câu hỏi kiến thức và 01 câu hỏi dự đoán số người tham gia. Thời gian làm bài: 15 phút.</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="text-civic-red font-bold text-lg mb-1"><i class="fa-solid fa-circle-check mr-1"></i> Số lượt thi</div>
+                                <p class="text-slate-600 text-sm">Mỗi thí sinh có thể tham gia tối đa 03 lượt thi. Ban Tổ chức sẽ lấy kết quả cao nhất của thí sinh để xét giải thưởng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Cách thức tham gia -->
+                <div id="content-cach-thuc" class="tab-panel hidden">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right-to-city"></i> Hướng Dẫn Tham Gia
+                    </h3>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-12 h-12 bg-red-100 text-civic-red rounded-full flex items-center justify-center font-bold text-xl mb-3">1</div>
+                            <h4 class="font-bold text-slate-800 mb-1">Truy cập hệ thống</h4>
+                            <p class="text-xs text-slate-600">Truy cập website cuộc thi trong thời gian diễn ra.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-bold text-xl mb-3">2</div>
+                            <h4 class="font-bold text-slate-800 mb-1">Bấm Bắt Đầu</h4>
+                            <p class="text-xs text-slate-600">Nhấn nút "BẮT ĐẦU LÀM BÀI" để hệ thống quay chọn bộ đề thi ngẫu nhiên.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-xl mb-3">3</div>
+                            <h4 class="font-bold text-slate-800 mb-1">Nhập thông tin</h4>
+                            <p class="text-xs text-slate-600">Điền chính xác Họ tên, Số điện thoại, Số CCCD, Đơn vị/Tổ dân phố công tác hoặc sinh sống.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-bold text-xl mb-3">4</div>
+                            <h4 class="font-bold text-slate-800 mb-1">Làm bài & Nộp bài</h4>
+                            <p class="text-xs text-slate-600">Hoàn thành 20 câu trắc nghiệm và bấm "Nộp Bài" trước khi hết giờ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Giải thưởng -->
+                <div id="content-giai-thuong" class="tab-panel hidden">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-award"></i> Cơ Cấu Giải Thưởng
+                    </h3>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="p-4 rounded-xl bg-gradient-to-b from-amber-50 to-amber-100 border border-amber-300 text-center shadow-sm">
+                            <i class="fa-solid fa-crown text-amber-500 text-3xl mb-2"></i>
+                            <h4 class="font-bold text-amber-900">01 Giải Nhất</h4>
+                            <p class="text-sm font-semibold text-civic-red mt-1">Giấy khen + 3.000.000 VNĐ</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-gradient-to-b from-slate-100 to-slate-200 border border-slate-300 text-center shadow-sm">
+                            <i class="fa-solid fa-medal text-slate-400 text-3xl mb-2"></i>
+                            <h4 class="font-bold text-slate-800">02 Giải Nhì</h4>
+                            <p class="text-sm font-semibold text-civic-red mt-1">Giấy khen + 2.000.000 VNĐ</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-gradient-to-b from-amber-900/10 to-amber-900/20 border border-amber-700/30 text-center shadow-sm">
+                            <i class="fa-solid fa-award text-amber-700 text-3xl mb-2"></i>
+                            <h4 class="font-bold text-amber-950">03 Giải Ba</h4>
+                            <p class="text-sm font-semibold text-civic-red mt-1">Giấy khen + 1.000.000 VNĐ</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-gradient-to-b from-blue-50 to-blue-100 border border-blue-200 text-center shadow-sm">
+                            <i class="fa-solid fa-ribbon text-blue-500 text-3xl mb-2"></i>
+                            <h4 class="font-bold text-blue-900">05 Giải Khuyến Khích</h4>
+                            <p class="text-sm font-semibold text-civic-red mt-1">Giấy khen + 500.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Kết quả -->
+                <div id="content-ket-qua" class="tab-panel hidden">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Thời Gian Công Bố Kết Quả
+                    </h3>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3 text-slate-700 text-sm md:text-base">
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-info text-civic-red mt-1"></i>
+                            <span>Kết quả cuộc thi sẽ được Ban Tổ chức tổng hợp và công bố chính thức trong thời hạn <strong>07 ngày làm việc</strong> kể từ ngày kết thúc cuộc thi.</span>
+                        </p>
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-globe text-blue-600 mt-1"></i>
+                            <span>Danh sách cá nhân đạt giải được niêm yết tại Trang thông tin điện tử UBND Phường La Gi, tỉnh Lâm Đồng và thông báo qua số điện thoại đăng ký dự thi.</span>
+                        </p>
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-amber-600 mt-1"></i>
+                            <span>Lễ tổng kết và trao giải dự kiến tổ chức tại Hội trường HĐND-UBND-UBMTTQVN Phường La Gi, tỉnh Lâm Đồng.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tab 6: Tài liệu -->
+                <div id="content-tai-lieu" class="tab-panel hidden">
+                    <h3 class="text-xl font-bold text-civic-red mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Tài Liệu
+                    </h3>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3 text-slate-700 text-sm md:text-base">
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-info text-civic-red mt-1"></i>
+                            <span>Kết quả cuộc thi sẽ được Ban Tổ chức tổng hợp và công bố chính thức trong thời hạn <strong>07 ngày làm việc</strong> kể từ ngày kết thúc cuộc thi.</span>
+                        </p>
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-book text-red-600 mt-1"></i>
+                            <span><a href="https://lagi.lamdong.gov.vn">sách cá nhân đạt giải được niêm yết tại Trang thông tin điện tử UBND Phường La Gi, tỉnh Lâm Đồng và thông báo qua số điện thoại đăng ký dự thi.</a></span>
+                        </p>
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-amber-600 mt-1"></i>
+                            <span>Lễ tổng kết và trao giải dự kiến tổ chức tại Hội trường HĐN-UBND-UBMTTQVN Phường La Gi, tỉnh Lâm Đồng.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- SPIN WHEEL MODAL DIALOG -->
+    <div id="wheel-modal" class="fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4 hidden">
+        <div class="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 md:p-8 max-w-lg w-full border-2 border-amber-400 shadow-2xl relative text-center flex flex-col items-center">
+            
+            <!-- Modal Header -->
+            <h3 class="font-header font-extrabold text-xl md:text-2xl text-amber-300 uppercase tracking-wide mb-1">
+                HỆ THỐNG CHỌN ĐỀ TỰ ĐỘNG
+            </h3>
+            <p class="text-xs text-slate-300 mb-4">Vòng tròn đang quay để phân bổ ngẫu nhiên đề thi cho bạn...</p>
+
+            <!-- CANVAS WHEEL CONTAINER -->
+            <div class="relative my-2 flex justify-center items-center">
+                <!-- Top Pointer Arrow (Pointing down into wheel) -->
+                <div class="absolute -top-3 z-20 flex flex-col items-center">
+                    <div class="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-t-[24px] border-t-red-600 drop-shadow-md"></div>
+                </div>
+
+                <!-- Canvas Element -->
+                <canvas id="wheel-canvas" width="340" height="340" class="rounded-full shadow-2xl border-4 border-amber-400/80 bg-slate-950"></canvas>
+            </div>
+
+            <!-- RESULT & REDIRECT DISPLAY BOX -->
+            <div id="result-box" class="w-full mt-4 min-h-[90px] flex flex-col justify-center items-center">
+                <div id="spin-status-txt" class="text-amber-400 font-semibold animate-pulse text-sm">
+                    <i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang quay chọn đề thi...
+                </div>
+
+                <div id="selected-result" class="hidden flex flex-col items-center space-y-2">
+                    <div class="text-2xl md:text-3xl font-black text-amber-300 font-header bg-amber-500/20 px-6 py-2 rounded-2xl border border-amber-400/50">
+                        <span id="exam-title-result">Bạn đã chọn được ĐỀ SỐ 01</span>
+                    </div>
+                    <p id="redirect-countdown-txt" class="text-sm font-medium text-slate-200">
+                        Tự động chuyển hướng sau <span id="redirect-timer" class="text-amber-400 font-bold text-lg">5</span> giây...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cancel/Close Button -->
+            <button id="btn-close-modal" class="mt-4 text-xs text-slate-400 hover:text-white underline hidden">
+                Đóng cửa sổ
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-civic-navy text-slate-300 text-xs py-8 px-4 border-t-4 border-amber-500">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
+            <div>
+                <h4 class="font-header font-bold text-amber-400 text-sm mb-1 uppercase">
+                    ỦY BAN NHÂN DÂN PHƯỜNG LA GI - TỈNH LÂM ĐỒNG
+                </h4>
+                <p class="text-slate-400">Địa chỉ: 26 Hoàng Diệu, Phường La Gi, tỉnh Lâm Đồng</p>
+                <p class="text-slate-400">Bản quyền © 2026 UBND Phường La Gi. Tất cả quyền được bảo lưu.</p>
+            </div>
+            <div class="md:text-right space-y-1">
+                <p class="text-amber-200/90"><i class="fa-solid fa-shield-halved mr-1"></i> Ban Tổ chức Cuộc thi Tìm hiểu Pháp luật năm 2026</p>
+                <p class="text-slate-400"><i class="fa-solid fa-headset mr-1"></i> Báo lỗi & Hỗ trợ kỹ thuật: 0986.310.127 - 0382.368.191</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* 
+         * ==========================================
+         * CONTEST CONFIGURATION (EDIT JS CODE HERE)
+         * ==========================================
+         * User requirement: Dates are set fixed in code.
+         * Format: "YYYY-MM-DDTHH:mm:ss"
+         */
+        const CONTEST_CONFIG = {
+            // Set Start Date & Time
+            startDate: "2026-09-01T08:00:00", 
+            // Set End Date & Time
+            endDate: "2026-09-30T17:00:00",
+            
+            // Redirect URLs for each paper (Set desired target links here)
+            examLinks: {
+                1: "https://lagi.lamdong.gov.vn/",
+                2: "https://lagi.lamdong.gov.vn/gioi-thieu-chung",
+                3: "https://lagi.lamdong.gov.vn/kinh-te-chinh-tri",
+                4: "https://lagi.lamdong.gov.vn/van-ban-chi-dao-dieu-hanh",
+                5: "https://lagi.lamdong.gov.vn/quy-hoach-do-thi"
+            }
+        };
+
+        // Slice definitions for 5 equal parts
+        const EXAM_SLICES = [
+            { id: 1, label: "ĐỀ SỐ 01", color: "#b91c1c" }, // Deep Red
+            { id: 2, label: "ĐỀ SỐ 02", color: "#1e3a8a" }, // Royal Blue
+            { id: 3, label: "ĐỀ SỐ 03", color: "#047857" }, // Emerald Green
+            { id: 4, label: "ĐỀ SỐ 04", color: "#d97706" }, // Warm Amber
+            { id: 5, label: "ĐỀ SỐ 05", color: "#6d28d9" }  // Purple
+        ];
+
+        // Global State Variables
+        let timerInterval = null;
+        let simulatedState = null; // null = use real time, 'before', 'active', 'ended'
+        let currentSelectedPaper = 1;
+
+        // Audio Context Synthesizer for spinning sound ticks & completion chime
+        let audioCtx = null;
+
+        function playTickSound() {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.04);
+                
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.04);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.04);
+            } catch (e) {
+                // Ignore audio restriction errors if muted/unsupported
+            }
+        }
+
+        function playVictorySound() {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const now = audioCtx.currentTime;
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.2, now + idx * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.4);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now + idx * 0.1);
+                    osc.stop(now + idx * 0.1 + 0.4);
+                });
+            } catch(e) {}
+        }
+
+        // Format Date Strings for UI Header
+        function formatDateVN(dateObj) {
+            const d = dateObj.getDate().toString().padStart(2, '0');
+            const m = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+            const y = dateObj.getFullYear();
+            return `${d}/${m}/${y}`;
+        }
+
+        // Format Date & Time Strings for Contest Span Display
+        function formatDateTimeVN(dateObj) {
+            const hh = dateObj.getHours().toString().padStart(2, '0');
+            const mm = dateObj.getMinutes().toString().padStart(2, '0');
+            const d = dateObj.getDate().toString().padStart(2, '0');
+            const m = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+            const y = dateObj.getFullYear();
+            return `${hh}:${mm} ngày ${d}/${m}/${y}`;
+        }
+
+        function initHeaderDates() {
+            const startObj = new Date(CONTEST_CONFIG.startDate);
+            const endObj = new Date(CONTEST_CONFIG.endDate);
+            
+            document.getElementById('display-start-date').textContent = formatDateTimeVN(startObj);
+            document.getElementById('display-end-date').textContent = formatDateTimeVN(endObj);
+            
+            const today = new Date();
+            const daysOfWeek = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+            document.getElementById('current-date-txt').textContent = `${daysOfWeek[today.getDay()]}, ${formatDateVN(today)}`;
+        }
+
+        // Main Timer Loop
+        function updateTimer() {
+            const now = new Date().getTime();
+            const startTime = new Date(CONTEST_CONFIG.startDate).getTime();
+            const endTime = new Date(CONTEST_CONFIG.endDate).getTime();
+
+            const statusMsgEl = document.getElementById('status-message');
+            const clockEl = document.getElementById('countdown-clock');
+            const startBtnContainer = document.getElementById('start-btn-container');
+
+            // Handle testing simulation states if active
+            let effectiveNow = now;
+            if (simulatedState === 'before') {
+                effectiveNow = startTime - 100000;
+            } else if (simulatedState === 'active') {
+                effectiveNow = startTime + 50000;
+            } else if (simulatedState === 'ended') {
+                effectiveNow = endTime + 100000;
+            }
+
+            if (effectiveNow < startTime) {
+                // STATE 1: Before start time
+                statusMsgEl.innerHTML = '<i class="fa-solid fa-hourglass-start text-amber-400 mr-2"></i> Chưa đến thời gian diễn ra cuộc thi';
+                statusMsgEl.classList.remove('hidden');
+                clockEl.classList.add('hidden');
+                startBtnContainer.classList.add('hidden');
+            } 
+            else if (effectiveNow > endTime) {
+                // STATE 3: After end time
+                statusMsgEl.innerHTML = '<i class="fa-solid fa-hourglass-end text-red-400 mr-2"></i> Đã kết thúc cuộc thi';
+                statusMsgEl.classList.remove('hidden');
+                clockEl.classList.add('hidden');
+                startBtnContainer.classList.add('hidden');
+            } 
+            else {
+                // STATE 2: Contest actively running!
+                statusMsgEl.classList.add('hidden');
+                clockEl.classList.remove('hidden');
+                startBtnContainer.classList.remove('hidden');
+
+                // Calculate remaining time
+                const diff = endTime - effectiveNow;
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(d).padStart(2, '0');
+                document.getElementById('hours').textContent = String(h).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+            }
+        }
+
+        // Test State Switchers
+        function setTestState(state) {
+            simulatedState = state;
+            updateTimer();
+        }
+
+        function resetToRealTime() {
+            simulatedState = null;
+            updateTimer();
+        }
+
+        // CANVAS WHEEL ROTATION & RENDER ENGINE
+        const canvas = document.getElementById('wheel-canvas');
+        const ctx = canvas.getContext('2d');
+        const numSlices = EXAM_SLICES.length;
+        const sliceAngle = (2 * Math.PI) / numSlices;
+
+        let currentAngle = 0; // Current rotation in radians
+        let isSpinning = false;
+
+        function drawWheel(angle) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = canvas.width / 2 - 12;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw outer metallic rim
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius + 8, 0, 2 * Math.PI);
+            ctx.fillStyle = '#f59e0b';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius + 2, 0, 2 * Math.PI);
+            ctx.fillStyle = '#1e293b';
+            ctx.fill();
+
+            // Draw 5 Slices
+            for (let i = 0; i < numSlices; i++) {
+                const startA = angle + i * sliceAngle;
+                const endA = startA + sliceAngle;
+
+                // Slice sector
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startA, endA);
+                ctx.closePath();
+                ctx.fillStyle = EXAM_SLICES[i].color;
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#ffffff';
+                ctx.stroke();
+
+                // Text rendering
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(startA + sliceAngle / 2);
+                ctx.textAlign = "right";
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "bold 16px Montserrat, sans-serif";
+                // Shadow for text legibility
+                ctx.shadowColor = "rgba(0,0,0,0.8)";
+                ctx.shadowBlur = 4;
+                ctx.fillText(EXAM_SLICES[i].label, radius - 25, 6);
+                ctx.restore();
+            }
+
+            // Draw center cap
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 32, 0, 2 * Math.PI);
+            ctx.fillStyle = '#f59e0b';
+            ctx.fill();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#ffffff';
+            ctx.stroke();
+
+            // Center emblem star
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 22, 0, 2 * Math.PI);
+            ctx.fillStyle = '#991b1b';
+            ctx.fill();
+            
+            ctx.fillStyle = '#fef08a';
+            ctx.font = "bold 14px FontAwesome, sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("★", centerX, centerY + 1);
+        }
+
+        function startWheelSpin() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            // Reset modal UI status
+            document.getElementById('spin-status-txt').classList.remove('hidden');
+            document.getElementById('selected-result').classList.add('hidden');
+            document.getElementById('btn-close-modal').classList.add('hidden');
+
+            const spinDuration = 5000; // Exactly 5 seconds
+            const startTime = performance.now();
+
+            // Randomly select winning slice index (0 to 4)
+            const targetSliceIndex = Math.floor(Math.random() * numSlices);
+            currentSelectedPaper = EXAM_SLICES[targetSliceIndex].id;
+
+            // Arrow is at Top (270 degrees or -90 degrees, i.e., 1.5 * PI)
+            // Wheel slice angle offset calculation to land chosen slice under top arrow
+            const targetSliceCenterAngle = targetSliceIndex * sliceAngle + sliceAngle / 2;
+            const pointerAngle = 1.5 * Math.PI; // 270 deg
+            
+            // Total rotations (at least 6-8 full loops) + exact alignment angle
+            const totalRotations = 7 * 2 * Math.PI; 
+            const finalTargetAngle = totalRotations + (pointerAngle - targetSliceCenterAngle);
+
+            const initialAngle = currentAngle % (2 * Math.PI);
+            const totalDeltaAngle = finalTargetAngle - initialAngle;
+
+            let lastSliceTick = -1;
+
+            // Cubic Ease-Out function: decelerates smoothly near the end
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            function animateSpin(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / spinDuration, 1);
+                const easedProgress = easeOutCubic(progress);
+
+                currentAngle = initialAngle + totalDeltaAngle * easedProgress;
+                drawWheel(currentAngle);
+
+                // Play tick sound when crossing segment boundaries
+                const normalizedAngle = (currentAngle % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+                const currentTickSlice = Math.floor(normalizedAngle / sliceAngle);
+                if (currentTickSlice !== lastSliceTick) {
+                    playTickSound();
+                    lastSliceTick = currentTickSlice;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateSpin);
+                } else {
+                    // SPIN COMPLETED!
+                    isSpinning = false;
+                    playVictorySound();
+                    onSpinComplete(EXAM_SLICES[targetSliceIndex]);
+                }
+            }
+
+            requestAnimationFrame(animateSpin);
+        }
+
+        // Handle completion of spin
+        function onSpinComplete(selectedSlice) {
+            document.getElementById('spin-status-txt').classList.add('hidden');
+            
+            const resultEl = document.getElementById('selected-result');
+            const titleResultEl = document.getElementById('exam-title-result');
+            
+            titleResultEl.textContent = `Bạn đã chọn được ${selectedSlice.label}`;
+            resultEl.classList.remove('hidden');
+
+            // Start 5-second redirection countdown
+            let countdown = 5;
+            const countdownEl = document.getElementById('redirect-timer');
+            countdownEl.textContent = countdown;
+
+            const redirectTimer = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(redirectTimer);
+                    // Redirect to the paper URL
+                    const targetUrl = CONTEST_CONFIG.examLinks[selectedSlice.id] || "https://la-gi.lamdong.gov.vn/";
+                    console.log("Redirecting to: ", targetUrl);
+                    
+                    // Show confirmation/redirect message
+                    //alert(`Đang chuyển hướng bạn đến ${selectedSlice.label} tại đường dẫn:\n${targetUrl}`);
+                    window.location.href = targetUrl;
+                }
+            }, 1000);
+
+            document.getElementById('btn-close-modal').classList.remove('hidden');
+        }
+
+        // Tab switching logic for Part 2 content
+        function switchTab(tabKey) {
+            const tabs = ['noi-dung', 'the-le', 'cach-thuc', 'giai-thuong', 'ket-qua', 'tai-lieu'];
+            
+            tabs.forEach(key => {
+                const btn = document.getElementById(`tab-${key}`);
+                const panel = document.getElementById(`content-${key}`);
+                
+                if (key === tabKey) {
+                    btn.className = "tab-btn active font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-civic-red text-white shadow-md";
+                    panel.classList.remove('hidden');
+                } else {
+                    btn.className = "tab-btn font-header font-semibold text-sm px-5 py-2.5 rounded-xl transition duration-200 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200";
+                    panel.classList.add('hidden');
+                }
+            });
+        }
+
+        // DOM Event Listeners initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            initHeaderDates();
+            
+            // Initial canvas render
+            drawWheel(0);
+
+            // Update timer every second
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+
+            // Click "BẮT ĐẦU LÀM BÀI"
+            const startBtn = document.getElementById('btn-start-exam');
+            const modal = document.getElementById('wheel-modal');
+            const closeModalBtn = document.getElementById('btn-close-modal');
+
+            startBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                // Automatically trigger spin after opening modal
+                setTimeout(() => {
+                    startWheelSpin();
+                }, 400);
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
